@@ -18,7 +18,10 @@ package com.example.android.miwok;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -45,22 +48,11 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-        int index = 0;
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-        while(index < words.size()){
-            // Create a new TextView
-            TextView wordView = new TextView(this);
+        ListView listView = (ListView) findViewById(R.id.list);
 
-            // Set the text to be word at the current index
-            wordView.setText(words.get(index));
-
-            // Add this TextView as another child to the root view of this layout
-            rootView.addView(wordView);
-
-            // Increment the index variable by 1
-            index++;
-        }
+        listView.setAdapter(itemsAdapter);
 
     }
 }
