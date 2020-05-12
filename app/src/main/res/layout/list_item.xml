@@ -14,9 +14,9 @@
         android:src="@mipmap/ic_launcher"/>
 
     <LinearLayout
+        android:id="@+id/text_container"
         android:orientation="vertical"
         android:paddingLeft="16dp"
-        android:background="@color/category_numbers"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
